@@ -58,7 +58,9 @@ typedef struct  {
 #define  tmYearToY2k(Y)      ((Y) - 30)    // offset is from 2000
 #define  y2kYearToTm(Y)      ((Y) + 30)   
 
-typedef time_t(*getExternalTime)();
+typedef std::function<time_t(void)> getExternalTime;
+/** Original */
+//typedef time_t(*getExternalTime)();
 //typedef void  (*setExternalTime)(const time_t); // not used in this version
 
 
